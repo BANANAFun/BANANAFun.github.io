@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>FrayFun — анархия в Minecraft</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Stardos+Stencil:wght@700&family=Rubik:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#d4d3cd;--ink:#15171a;--mute:#4b4d52;--paint:#e0342b;--panel:#e6e5df;--line:#15171a;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1c1d20;--ink:#ecebe4;--mute:#a4a5a8;--paint:#ff5a4d;--panel:#26272b;--line:#ecebe4}}
+:root[data-theme="dark"]{--bg:#1c1d20;--ink:#ecebe4;--mute:#a4a5a8;--paint:#ff5a4d;--panel:#26272b;--line:#ecebe4}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Rubik",system-ui,sans-serif;line-height:1.55}
+main{max-width:640px;margin:0 auto;padding:40px 20px 64px}
+h1{font-family:"Stardos Stencil","Impact",sans-serif;font-size:clamp(3.4rem,18vw,6.4rem);line-height:.92;margin:0 0 18px;letter-spacing:.01em}
+h1 span{color:var(--paint)}
+h2{font-family:"Stardos Stencil","Impact",sans-serif;font-size:1.7rem;margin:44px 0 12px}
+p{margin:0 0 12px;max-width:52ch}
+.lead{font-size:1.1rem;color:var(--mute)}
+.ip{display:flex;align-items:stretch;border:3px solid var(--line);background:var(--panel);margin-top:26px;max-width:460px}
+.ip code{flex:1;padding:14px 16px;font:600 1.05rem/1.2 "Rubik",monospace;overflow-wrap:anywhere;align-self:center}
+.ip button{border:0;border-left:3px solid var(--line);background:var(--paint);color:#fff;font:600 1rem "Rubik",sans-serif;padding:0 20px;cursor:pointer;min-height:52px}
+button:focus-visible,a:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+.note{font-size:.9rem;color:var(--mute);margin-top:8px;min-height:1.4em}
+ol{padding-left:1.2rem;margin:0}
+li{margin-bottom:10px;padding-left:4px}
+.cmd{font-family:monospace;background:var(--panel);padding:2px 7px;border:1px solid var(--line)}
+.cta{display:inline-block;background:var(--ink);color:var(--bg);text-decoration:none;font-weight:600;padding:14px 24px;margin-top:6px}
+.cta:hover{background:var(--paint);color:#fff}
+.tear{height:10px;margin:40px 0 0;background:repeating-linear-gradient(90deg,var(--ink) 0 14px,transparent 14px 20px,var(--ink) 20px 23px,transparent 23px 34px)}
+footer{color:var(--mute);font-size:.85rem;margin-top:36px}
+</style>
+</head>
+<body>
+<main>
+<h1>Fray<span>Fun</span></h1>
+<p class="lead">Анархия на Minecraft Java 1.21.11. Заходи, выживай, строй что хочешь.</p>
+
+<div class="ip">
+<code id="ip">frayfun.mysrv.us</code>
+<button id="copy" type="button">Копировать</button>
+</div>
+<p class="note" id="status" role="status"></p>
+
+<h2>Как зайти</h2>
+<ol>
+<li>Открой Minecraft Java Edition версии 1.21.11.</li>
+<li>Сетевая игра → Добавить сервер → вставь адрес выше.</li>
+<li>В игре напиши <span class="cmd">/register пароль пароль</span>. В следующий раз заходи через <span class="cmd">/login пароль</span>.</li>
+</ol>
+
+<h2>Команды</h2>
+<p><span class="cmd">/rtp</span> или <span class="cmd">/world</span>: телепорт в случайную точку мира. <span class="cmd">/lobby</span>: вернуться в лобби.</p>
+<p>Мир ограничен: 2000 × 2000 блоков.</p>
+
+<h2>Единственное правило</h2>
+<p>Никаких читов и автокликеров. Остальное решает игра.</p>
+
+<h2>Поддержать сервер</h2>
+<p>Деньги идут на хостинг и защиту от атак.</p>
+<a class="cta" href="#donate" id="donate">Поддержать</a>
+
+<div class="tear" aria-hidden="true"></div>
+<footer>FrayFun не связан с Mojang и Microsoft.</footer>
+</main>
+<script>
+(function(){
+var btn=document.getElementById("copy"),st=document.getElementById("status"),ip=document.getElementById("ip").textContent;
+function done(ok){st.textContent=ok?"Адрес скопирован":"Выдели адрес и скопируй вручную";}
+btn.addEventListener("click",function(){
+try{
+if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(ip).then(function(){done(true)},function(){done(false)});return;}
+}catch(e){}
+try{var r=document.createRange();r.selectNodeContents(document.getElementById("ip"));var s=window.getSelection();s.removeAllRanges();s.addRange(r);done(document.execCommand("copy"));}catch(e){done(false);}
+});
+})();
+</script>
+</body>
+</html>
