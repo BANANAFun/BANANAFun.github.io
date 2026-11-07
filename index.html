@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>FrayFun — анархия сервер Minecraft Java 1.21.11</title>
-<meta name="description" content="FrayFun: анархия-сервер Minecraft Java 1.21.11. IP: frayfun.mysrv.us. Без лицензии, с регистрацией, случайный телепорт, мир 2000×2000.">
+<meta name="description" content="FrayFun: анархия-сервер Minecraft Java 1.21.11. IP: frayfun.mysrv.us. Без лицензии, с регистрацией, случайный телепорт, мир от -1500 до 1500 (3000×3000), правила сервера.">
 <meta name="keywords" content="FrayFun, FrayFun сервер, анархия майнкрафт, сервер Minecraft, frayfun.mysrv.us">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22%3E%3Ctext y=%22.9em%22 font-size=%2290%22%3E%E2%9B%8F%EF%B8%8F%3C/text%3E%3C/svg%3E">
 <link rel="canonical" href="https://bananafun.github.io/">
@@ -63,10 +63,29 @@ ol{padding-left:1.3rem;margin:0}li{margin-bottom:10px}
 .don strong{display:block}
 .don code{display:block;font:600 .95rem/1.3 "Rubik",monospace;overflow-wrap:anywhere;margin:4px 0}
 .don small{color:var(--mute);font-size:.82rem}
+.acc{display:grid;gap:10px;margin-top:14px}
+.acc details{background:var(--panel);border:1px solid var(--line);border-radius:16px;overflow:hidden;transition:box-shadow .25s,border-color .25s}
+.acc details:hover{border-color:rgba(168,85,247,.7)}
+.acc details[open]{border-color:var(--v);box-shadow:0 0 26px rgba(168,85,247,.35)}
+.acc summary{list-style:none;display:flex;align-items:center;gap:12px;padding:18px 20px;cursor:pointer}
+.acc summary::-webkit-details-marker{display:none}
+.acc summary:focus-visible{outline:2px solid var(--v2);outline-offset:-2px;border-radius:16px}
+.acc summary b{flex:1;font:600 .98rem/1.3 "Unbounded",sans-serif}
+.acc summary small{color:var(--mute);font-size:.85rem}
+.acc summary small::before{content:"Развернуть"}
+.acc details[open] summary small::before{content:"Свернуть"}
+.acc summary i{width:9px;height:9px;border-right:2px solid var(--v2);border-bottom:2px solid var(--v2);transform:rotate(45deg) translateY(-2px);transition:transform .25s}
+.acc details[open] summary i{transform:rotate(-135deg) translateY(-2px)}
+.acc .body{padding:0 20px 18px;animation:opn .35s ease}
+@keyframes opn{from{opacity:0;transform:translateY(-6px)}}
+.rl{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.rl li{display:grid;grid-template-columns:2.8em 1fr;gap:6px}
+.rl span{color:var(--v2);font-weight:600;font-variant-numeric:tabular-nums;text-shadow:0 0 10px rgba(168,85,247,.7)}
+.rl p{margin:0}
 footer{color:var(--mute);font-size:.85rem;margin-top:44px;padding-top:18px;border-top:1px solid var(--line)}
 .js .rv{opacity:0;transform:translateY(16px);transition:opacity .6s,transform .6s}
 .js .rv.in{opacity:1;transform:none}
-@media (prefers-reduced-motion:reduce){h1{animation:none}.js .rv{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+@media (prefers-reduced-motion:reduce){h1{animation:none}.acc .body{animation:none}.js .rv{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
 @media (min-width:640px){.ranks{grid-template-columns:repeat(4,1fr)}.rank:last-child{grid-column:auto}}
 </style>
 </head>
@@ -87,13 +106,25 @@ footer{color:var(--mute);font-size:.85rem;margin-top:44px;padding-top:18px;borde
 
 <section class="rv"><h2>Команды</h2>
 <p><span class="cmd">/rtp</span> или <span class="cmd">/world</span>: телепорт в случайную точку мира. <span class="cmd">/lobby</span>: вернуться в лобби.</p>
-<p>Мир ограничен: 2000 × 2000 блоков.</p></section>
+<p>Мир ограничен: от −1500 до 1500 по X и Z (3000 × 3000 блоков).</p></section>
 
-<section class="rv"><h2>Единственное правило</h2>
-<p>Никаких читов и автокликеров. Остальное решает игра.</p></section>
+<section class="rv" id="rules"><h2>Правила сервера</h2>
+<p>Начало игры означает согласие с этими правилами. Нажми на раздел, чтобы открыть.</p>
+<div class="acc">
+<details><summary><b>1. Общие положения</b><small></small><i></i></summary><div class="body"><ul class="rl"><li><span>1.1</span><p>Настоящий документ является официальным Пользовательским соглашением (Офертой) проекта FrayFun.</p></li><li><span>1.2</span><p>Незнание правил не освобождает от ответственности. Начало игры означает полное согласие с данным сводом правил.</p></li><li><span>1.3</span><p>Администрация вправе изменять правила в одностороннем порядке без предварительного уведомления.</p></li><li><span>1.4</span><p>Администрация не несёт ответственности за ценности, утерянные в ходе игрового процесса или технических сбоев.</p></li></ul></div></details>
+<details><summary><b>2. Учётные записи</b><small></small><i></i></summary><div class="body"><ul class="rl"><li><span>2.1</span><p>Пользователь несёт полную ответственность за сохранность и все действия, совершённые с его аккаунта.</p></li><li><span>2.2</span><p>Запрещены передача, покупка, продажа или попытка взлома чужих учётных записей.</p></li><li><span>2.3</span><p>Запрещено иметь более 2 активных аккаунтов. Обход блокировок с помощью твинков строго запрещён.</p></li></ul></div></details>
+<details><summary><b>3. Регламент чата</b><small></small><i></i></summary><div class="body"><ul class="rl"><li><span>3.1</span><p>Запрещены спам, флуд, капс и массовая рассылка одинаковых сообщений.</p></li><li><span>3.2</span><p>Запрещено разжигание межнациональной, расовой, религиозной или политической розни.</p></li><li><span>3.3</span><p>Запрещена реклама сторонних серверов, коммерческих и посторонних ресурсов.</p></li><li><span>3.4</span><p>Запрещены доксинг, деанон, угрозы расправой в реальной жизни и публикация чужих личных данных.</p></li></ul></div></details>
+<details><summary><b>4. Запрещённое ПО и читы</b><small></small><i></i></summary><div class="body"><ul class="rl"><li><span>4.1</span><p>Запрещено использование любого софта и читов, дающих преимущество (KillAura, Fly, X-Ray, Auto-Totem и др.).</p></li><li><span>4.2</span><p>Запрещена автоматизация игрового процесса ботами, скриптами и автокликерами.</p></li><li><span>4.3</span><p>Наличие и хранение чит-софта на устройстве при проверке приравнивается к его использованию.</p></li></ul></div></details>
+<details><summary><b>5. Проверка на стороннее ПО</b><small></small><i></i></summary><div class="body"><ul class="rl"><li><span>5.1</span><p>Модератор вправе вызвать любого игрока на проверку при наличии подозрений.</p></li><li><span>5.2</span><p>Выход из игры, уклонение, игнорирование или затягивание времени проверки (более 5 минут) расценивается как факт вины.</p></li><li><span>5.3</span><p>Запрещено удаление файлов, очистка корзины или запуск программ во время проверки.</p></li></ul></div></details>
+<details><summary><b>6. Баги и лаги</b><small></small><i></i></summary><div class="body"><ul class="rl"><li><span>6.1</span><p>Запрещено использование уязвимостей (багов) игры или плагинов для дюпа предметов и игровой валюты.</p></li><li><span>6.2</span><p>Пользователь обязан незамедлительно уведомить администрацию об обнаруженных критических багах.</p></li><li><span>6.3</span><p>Запрещены действия, направленные на искусственное снижение производительности (TPS) сервера.</p></li></ul></div></details>
+<details><summary><b>7. Коммерция и RMT</b><small></small><i></i></summary><div class="body"><ul class="rl"><li><span>7.1</span><p>Продажа или покупка любых игровых ценностей за реальные деньги вне официального магазина FrayFun строго запрещена.</p></li><li><span>7.2</span><p>Попытка совершения RMT-сделки приравнивается к её фактическому совершению.</p></li></ul></div></details>
+<details><summary><b>8. Режим «Анархия»</b><small></small><i></i></summary><div class="body"><ul class="rl"><li><span>8.1</span><p>Гриферство, убийства игроков, изъятие незаприваченного имущества и обман при торговле являются частью игрового режима.</p></li></ul></div></details>
+<details><summary><b>9. Платные услуги</b><small></small><i></i></summary><div class="body"><ul class="rl"><li><span>9.1</span><p>Все финансовые транзакции на сайте являются добровольными пожертвованиями на развитие проекта.</p></li><li><span>9.2</span><p>Возврат денежных средств за приобретённые виртуальные услуги не предусмотрен.</p></li><li><span>9.3</span><p>Нарушение правил и последующая блокировка аккаунта не являются основанием для возврата средств.</p></li></ul></div></details>
+<details><summary><b>10. Зона лобби</b><small></small><i></i></summary><div class="body"><ul class="rl"><li><span>10.1</span><p>Запрещён намеренный обход установленных барьеров зоны лобби.</p></li><li><span>10.2</span><p>Запрещено создание искусственных помех игрокам в публичных зонах спавна.</p></li></ul></div></details>
+</div></section>
 
 <section class="rv" id="ranks"><h2>Привилегии</h2>
-<p>Привилегия выдаётся в игре автоматически после доната.</p>
+<p>Привилегия выдаётся в игре после доната.</p>
 <div class="term" role="tablist" aria-label="Срок">
 <button type="button" role="tab" class="on" data-t="0">30 дней</button>
 <button type="button" role="tab" data-t="1">90 дней</button>
